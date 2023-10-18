@@ -1,3 +1,5 @@
+import "cypress-file-upload";
+
 // Microsoft Office Specialist & Instructor
 describe("Testing Office and Tools", () => {
     it("Microsoft Office Specialist & Instructor", () => {
@@ -21,10 +23,8 @@ describe("Testing Office and Tools", () => {
         // File Upload
         cy.get("#cv_up").invoke("show").attachFile("cheatsheet.pdf");
 
-        cy.wait(5000);
         cy.get("button[type='submit']").click();
-        cy.get("div[class='overflow-hidden p-7 fixed top-0 w-full h-full md:w-[515px] md:h-[504px] md:rounded-xl right-0 bottom-0 left-0 m-auto bg-white z-[999999] flex flex-col gap-y-7'] span[class='mb-7 text-5xl font-extrabold text-green-500 flex text-center']")
-        .contains("Great");
+        cy.get("div[x-show='formSubmitted']").should("be.visible");
         
         cy.wait(5000);
     });
@@ -42,7 +42,6 @@ describe("Testing Finance", () => {
         cy.visit("https://www.anchorsoftacademy.com/careers-openings/3/");
         cy.wait(5000);
 
-        // cy.get("section[class='px-8 md:px-0 flex flex-col items-center justify-center py-12']").scrollTo("bottom", {duration: 2000});
         cy.get("button[class='px-12 md:px-16 py-7 bg-primary text-2xl lg:text-[1.35rem] xl:text-2xl text-neutralWhite font-medium w-max rounded-lg transition-all duration-200 hover:bg-secondary-hover']").click();
         cy.get("input[placeholder='First Name']").type("John");
         cy.get("input[x-model='applicationData.last_name']").type("Zebedee");
@@ -57,8 +56,10 @@ describe("Testing Finance", () => {
         // File Upload
         cy.get("#cv_up").invoke("show").attachFile("cheatsheet.pdf");
 
-        cy.wait(5000);
         cy.get("button[type='submit']").click();
+        cy.get("div[x-show='formSubmitted']").should("be.visible");
+        
+        cy.wait(5000);
     });
 });
 
@@ -87,7 +88,7 @@ describe("Testing Marketing & Business Development", () => {
         // File Upload
         cy.get("#cv_up").invoke("show").attachFile("cheatsheet.pdf");
 
-        cy.wait(5000);
         cy.get("button[type='submit']").click();
+        cy.get("div[x-show='formSubmitted']").should("be.visible");
     });
 });

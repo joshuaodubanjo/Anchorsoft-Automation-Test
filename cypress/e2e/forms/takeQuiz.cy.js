@@ -29,7 +29,7 @@ describe("Take a Quiz", () => {
         cy.get("#more-about").should("have.value", "Nothing to check here, just testing!!!");
         
         // Submit the form
-        // cy.get("div[class='flex items-center justify-center gap-x-8'] button[class='nextQBtn px-14 py-5 bg-secondary text-2xl lg:text-[1.35rem] xl:text-2xl text-neutralWhite font-medium w-max rounded-lg transition-all duration-200 hover:bg-secondary-hover disabled:bg-slate-200 disabled:cursor-not-allowed cursor-pointer']").click();
+        cy.get("div[class='flex items-center justify-center gap-x-8'] button[class='nextQBtn px-14 py-5 bg-secondary text-2xl lg:text-[1.35rem] xl:text-2xl text-neutralWhite font-medium w-max rounded-lg transition-all duration-200 hover:bg-secondary-hover disabled:bg-slate-200 disabled:cursor-not-allowed cursor-pointer']").click();
 
         // Checks if successful
         cy.get("div[class='overflow-hidden p-7 fixed top-0 w-full h-full md:w-[515px] md:h-[504px] md:rounded-xl right-0 bottom-0 left-0 m-auto bg-white z-[999999] flex flex-col gap-y-7'] span[class='mb-7 text-5xl font-extrabold text-green-500 flex text-center']")
@@ -39,7 +39,7 @@ describe("Take a Quiz", () => {
     });
 
 
-    it.only("Positive test: For tertiary graduates", () => {    
+    it("Positive test: For tertiary graduates", () => {    
         cy.visit("/")
 
         // Scroll to the element
@@ -155,7 +155,7 @@ describe("Take a Quiz", () => {
         cy.wait(1000);
         
         // Submit the form
-        // cy.get("div[class='flex items-center justify-center gap-x-8'] button[class='nextQBtn px-14 py-5 bg-secondary text-2xl lg:text-[1.35rem] xl:text-2xl text-neutralWhite font-medium w-max rounded-lg transition-all duration-200 hover:bg-secondary-hover disabled:bg-slate-200 disabled:cursor-not-allowed cursor-pointer']").click();
+        cy.get("div[class='flex items-center justify-center gap-x-8'] button[class='nextQBtn px-14 py-5 bg-secondary text-2xl lg:text-[1.35rem] xl:text-2xl text-neutralWhite font-medium w-max rounded-lg transition-all duration-200 hover:bg-secondary-hover disabled:bg-slate-200 disabled:cursor-not-allowed cursor-pointer']").click();
 
         // Checks if successful
         cy.get("div[class='overflow-hidden p-7 fixed top-0 w-full h-full md:w-[515px] md:h-[504px] md:rounded-xl right-0 bottom-0 left-0 m-auto bg-white z-[999999] flex flex-col gap-y-7'] span[class='mb-7 text-5xl font-extrabold text-green-500 flex text-center']")

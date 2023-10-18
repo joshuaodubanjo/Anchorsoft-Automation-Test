@@ -79,7 +79,7 @@ describe("Testing financial aid form", function(){
     });
 
     // Sponsorship with organisation as sponsor type
-    it.only("Testing all input of sponsor form(Organisation)", function(){
+    it("Testing all input of sponsor form(Organisation)", function(){
         cy.on("uncaught:exception", (err, runnable) => {
             return false;
         });
